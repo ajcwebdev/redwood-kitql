@@ -1,0 +1,18 @@
+{
+  "name": "svelte",
+  "packageManager": "yarn@3.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "package": "svelte-kit package",
+    "preview": "svelte-kit preview",
+    "prepare": "svelte-kit sync"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-netlify": "next",
+    "@sveltejs/kit": "^1.0.0-next.1",
+    "dotenv": "^16.0.0",
+    "svelte": "^3.46.6"
+  }
+}
