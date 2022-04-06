@@ -180,4 +180,4 @@ Add the following build instructions to `netlify.toml`.
   publish = "build"
 ```
 
-Initialize a GitHub repo and connect to Netlify for automatic deployment.
+Initialize a GitHub repo and connect to Netlify for automatic deployment. I deployed each side from different branches to make it easier to manage the build commands and environment variables.
