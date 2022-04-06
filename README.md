@@ -85,8 +85,10 @@ const config = {
 export default config
 ```
 
+Add the following to `app.html`.
+
 ```html
-<!-- svelte/src/routes/index.svelte -->
+<!-- svelte/src/app.html -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -101,6 +103,8 @@ export default config
 	</body>
 </html>
 ```
+
+Add your endpoint and GraphQL query to `graphql.js`.
 
 ```js
 // web/src/routes/graphql.js
@@ -133,6 +137,8 @@ export async function post() {
   }
 }
 ```
+
+Finally, include your Svelte component in `index.svelte`.
 
 ```svelte
 <!-- web/src/routes/index.svelte -->
