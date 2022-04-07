@@ -1,0 +1,6 @@
+query Version {
+  redwood {
+    version
+    # prismaVersion # Add / Remove while running SvelteKit... you will see what happen!
+  }
+}
