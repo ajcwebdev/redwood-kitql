@@ -4,6 +4,7 @@
 	"license": "MIT",
 	"scripts": {
 		"gen": "graphql-codegen --config ./.graphqlrc.yaml",
+		"start": "npm run gen && npm run dev",
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"package": "svelte-kit package",
