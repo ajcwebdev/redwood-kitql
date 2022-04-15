@@ -11,7 +11,11 @@
 		"prepare": "svelte-kit sync"
 	},
 	"devDependencies": {
+		"@graphql-codegen/cli": "^2.6.2",
+		"@kitql/client": "^0.5.3",
+		"@kitql/vite-plugin-watch-and-run": "^0.3.0",
 		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-netlify": "^1.0.0-next.51",
 		"@sveltejs/kit": "next",
 		"dotenv": "^16.0.0",
 		"svelte": "3.46.4",
