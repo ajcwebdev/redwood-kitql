@@ -1,189 +1,40 @@
-# How to Query the Redwood API with SvelteKit
+# RedwoodJS and KitQL
 
-Cause sometimes you're just like, "React...? Nah."
+## Redwood API
 
-## Create Redwood App and Start API Server
-
-Create a boilerplate Redwood application and start the development server on the `api` side only.
+Install dependencies and run only the Redwood `api` side on `localhost:8911`:
 
 ```bash
-yarn create redwood-app redwood-sveltekit
-cd redwood-sveltekit
-yarn rw setup deploy netlify
+yarn
 yarn rw dev api
 ```
 
-Leave the API running and open another terminal to send a `curl` command to the GraphQL API with a GraphQL query asking for the Redwood version number of the project.
+Test the endpoint on [localhost:8911/graphql](http://localhost:8911/graphql) or run the following `curl` command:
 
 ```bash
-curl --request POST \
+curl 'http://localhost:8911/graphql' \
   --header 'content-type: application/json' \
-  --url 'localhost:8911/graphql' \
-  --data '{"query":"{ redwood { version } }"}'
+  --data '{"query":"{ redwood { version currentUser prismaVersion } }"}'
 ```
 
-Alternatively you can open [localhost:8911/graphql](http://localhost:8911/graphql) and send a GraphQL query through the GraphQL Yoga GraphiQL editor.
-
-## Create SvelteKit Side
-
-Create a `svelte` directory with `src/routes` nested inside and initialize a `package.json` file.
+Copy the contents of `.env.example` and create a new `.env` file.
 
 ```bash
-mkdir -p svelte/src/routes
+cp .env.example .env
+```
+
+The Redwood API endpoint (`http://localhost:8911/graphql`) is set to an environment variable (`VITE_REDWOOD_API_ENDPOINT`).
+
+### Start KitQL
+
+Keep your first terminal running, open another and navigate into the `svelte` directory. Install dependencies and run the development server on `localhost:3000`.
+
+```bash
 cd svelte
-yarn init -y
+yarn
+yarn start
 ```
 
-Open the `package.json` file in the `svelte` directory and add `module` for the `type` along with the following scripts:
+Open [localhost:3000](http://localhost:3000) to see the frontend querying the Redwood version from the API.
 
-```json
-{
-  "name": "svelte",
-  "packageManager": "yarn@3.2.0",
-  "type": "module",
-  "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "package": "svelte-kit package",
-    "preview": "svelte-kit preview",
-    "prepare": "svelte-kit sync"
-  }
-}
-```
-
-Create project files and install dependencies.
-
-```bash
-touch yarn.lock svelte.config.js netlify.toml src/app.html \
-  src/routes/index.svelte src/routes/graphql.js
-yarn add -D dotenv svelte @sveltejs/kit @sveltejs/adapter-netlify@next
-```
-
-Create a `.env` file with our Redwood API endpoint and a `.gitignore` file.
-
-```bash
-echo 'REDWOOD_API_ENDPOINT=http://localhost:8911/graphql' > .env
-echo 'build\n.svelte-kit' > .gitignore
-```
-
-### Svelte Configuration File
-
-Add the following to `svelte.config.js`
-
-```js
-// svelte/svelte.config.js
-
-import adapter from '@sveltejs/adapter-netlify'
-
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
-	kit: {
-		adapter: adapter()
-	}
-}
-
-export default config
-```
-
-Add the following to `app.html`.
-
-```html
-<!-- svelte/src/app.html -->
-
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="description" content="An example RedwoodJS application with a SvelteKit frontend" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%svelte.head%
-	</head>
-	<body>
-		<div>%svelte.body%</div>
-	</body>
-</html>
-```
-
-Add your endpoint and GraphQL query to `graphql.js`.
-
-```js
-// web/src/routes/graphql.js
-
-import 'dotenv/config'
-
-const { REDWOOD_API_ENDPOINT } = process.env
-
-export async function post() {
-  const response = await fetch(REDWOOD_API_ENDPOINT, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      query: `{
-        redwood {
-          version
-        }
-      }`
-    })
-  })
-
-  const data = await response.json()
-
-  if (data) {
-    return {
-      body: data
-    }
-  }
-}
-```
-
-Finally, include your Svelte component in `index.svelte`.
-
-```svelte
-<!-- web/src/routes/index.svelte -->
-
-<script context="module">
-  export const load = async ({ fetch }) => {
-    try {
-      const response = await fetch('/graphql', {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      return {
-        props: { ...(await response.json()) }
-      }
-    } catch (error) {
-      console.error(`Error in load function for /: ${error}`)
-    }
-  }
-</script>
-
-<script>
-  export let data
-</script>
-
-<main class="container">
-  <h2>Redwood Version - {data.redwood.version}</h2>
-  <p>Woot!</p>
-</main>
-```
-
-Start the development server and open [localhost:3000](http://localhost:3000).
-
-```bash
-yarn dev
-```
-
-Add the following build instructions to `netlify.toml`.
-
-```toml
-[build]
-  command = "yarn build"
-  publish = "build"
-```
-
-Initialize a GitHub repo and connect to Netlify for automatic deployment. I deployed each side from different branches to make it easier to manage the build commands and environment variables.
+<img alt="Redwood Version 1 KitQL Query" src="https://user-images.githubusercontent.com/12433465/173026556-d3d2e9f6-16a4-4eb3-a043-d6a746574d36.png">
