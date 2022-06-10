@@ -13,8 +13,8 @@ Test the endpoint on [localhost:8911/graphql](http://localhost:8911/graphql) or 
 
 ```bash
 curl 'http://localhost:8911/graphql' \
-  --header 'content-type: application/json' \
-  --data '{"query":"{ redwood { version currentUser prismaVersion } }"}'
+  -H 'content-type: application/json' \
+  -d '{"query":"{ redwood { version currentUser prismaVersion } }"}'
 ```
 
 Copy the contents of `.env.example` and create a new `.env` file.
