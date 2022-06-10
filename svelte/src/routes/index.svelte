@@ -1,27 +1,18 @@
 <script context="module">
+  import { KQL_Version } from "$lib/graphql/_kitql/graphqlStores";
+  import { KitQLInfo } from "@kitql/all-in";
+
   export const load = async ({ fetch }) => {
-    try {
-      const response = await fetch('/graphql', {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      return {
-        props: { ...(await response.json()) }
-      }
-    } catch (error) {
-      console.error(`Error in load function for /: ${error}`)
-    }
+   await KQL_Version.queryLoad({fetch})
+   return {}
   }
 </script>
 
-<script>
-  export let data
-</script>
-
 <main class="container">
-  <h2>Redwood Version - {data.redwood.version}</h2>
-  <p>Woot!</p>
+
+  <KitQLInfo store={KQL_Version}></KitQLInfo>
+
+  <h2>Redwood Version - {$KQL_Version.data?.redwood.version}</h2>
+  <p>Woot KitQL is on 🔥!</p>
+  <a href="/graphql" target="_blanck">Local Graph<i>i</i>QL Yoga</a>
 </main>
