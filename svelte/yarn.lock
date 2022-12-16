@@ -1306,7 +1306,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-yoga/common@npm:^2.8.2":
+"@graphql-yoga/common@npm:2.8.2":
   version: 2.8.2
   resolution: "@graphql-yoga/common@npm:2.8.2"
   dependencies:
@@ -1395,7 +1395,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kitql/all-in@npm:0.6.7, @kitql/all-in@npm:^0.6.7":
+"@kitql/all-in@npm:0.6.7":
   version: 0.6.7
   resolution: "@kitql/all-in@npm:0.6.7"
   dependencies:
@@ -6277,7 +6277,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte-preprocess@npm:^4.10.7":
+"svelte-preprocess@npm:4.10.7":
   version: 4.10.7
   resolution: "svelte-preprocess@npm:4.10.7"
   dependencies:
@@ -6326,7 +6326,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte@npm:^3.48.0":
+"svelte@npm:3.48.0":
   version: 3.48.0
   resolution: "svelte@npm:3.48.0"
   checksum: edcc26c1c2ea64963a2b1ab61ef1dbc0b84e76a68986c7737e9f4c4b3c7d40ec94f0a750ae0fbe27f5981d8cf2282e31d4e57cb050355b9d3c57896707ef55a0
@@ -6338,8 +6338,8 @@ __metadata:
   resolution: "svelte@workspace:."
   dependencies:
     "@graphql-codegen/cli": ^2.6.2
-    "@graphql-yoga/common": ^2.8.2
-    "@kitql/all-in": ^0.6.7
+    "@graphql-yoga/common": 2.8.2
+    "@kitql/all-in": 0.6.7
     "@kitql/client": ^0.5.7
     "@kitql/vite-plugin-watch-and-run": ^0.3.4
     "@sveltejs/adapter-auto": next
@@ -6347,10 +6347,10 @@ __metadata:
     "@sveltejs/kit": next
     dotenv: ^16.0.1
     graphql: ^16.5.0
-    svelte: ^3.48.0
-    svelte-preprocess: ^4.10.7
-    tslib: ^2.4.0
-    typescript: ^4.7.3
+    svelte: 3.48.0
+    svelte-preprocess: 4.10.7
+    tslib: 2.4.0
+    typescript: 4.7.3
   languageName: unknown
   linkType: soft
 
@@ -6509,17 +6509,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:2.4.0, tslib@npm:^2, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:~2.4.0":
+  version: 2.4.0
+  resolution: "tslib@npm:2.4.0"
+  checksum: eb19bda3ae545b03caea6a244b34593468e23d53b26bf8649fbc20fce43e9b21a71127fd6d2b9662c0fe48ee6ff668ead48fd00d3b88b2b716b1c12edae25b5d
+  languageName: node
+  linkType: hard
+
 "tslib@npm:^1.9.0":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: 69ae09c49eea644bc5ebe1bca4fa4cc2c82b7b3e02f43b84bd891504edf66dbc6b2ec0eef31a957042de2269139e4acff911e6d186a258fb14069cd7f6febce2
-  languageName: node
-  linkType: hard
-
-"tslib@npm:^2, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:~2.4.0":
-  version: 2.4.0
-  resolution: "tslib@npm:2.4.0"
-  checksum: eb19bda3ae545b03caea6a244b34593468e23d53b26bf8649fbc20fce43e9b21a71127fd6d2b9662c0fe48ee6ff668ead48fd00d3b88b2b716b1c12edae25b5d
   languageName: node
   linkType: hard
 
@@ -6537,7 +6537,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.7.3":
+"typescript@npm:4.7.3":
   version: 4.7.3
   resolution: "typescript@npm:4.7.3"
   bin:
@@ -6547,7 +6547,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.7.3#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.7.3#~builtin<compat/typescript>":
   version: 4.7.3
   resolution: "typescript@patch:typescript@npm%3A4.7.3#~builtin<compat/typescript>::version=4.7.3&hash=7ad353"
   bin:
@@ -6572,9 +6572,11 @@ __metadata:
   linkType: hard
 
 "undici@npm:^5.1.0":
-  version: 5.4.0
-  resolution: "undici@npm:5.4.0"
-  checksum: e3641956642e31408be52125f4292cdc0e09f3a5c098302f82ac3fff70abfa2da553b025774b5aee65cef980e0c60672123afbad681112bfaa549cc366ebee3b
+  version: 5.14.0
+  resolution: "undici@npm:5.14.0"
+  dependencies:
+    busboy: ^1.6.0
+  checksum: c5d8aee1dac037a8e840d96d2ca029c3a31af11db50bf178bdb5d55b02de08b9c05f4e070ed0407bda877e99048e127c856b362b0b2ad1374d7feff5ebc91e95
   languageName: node
   linkType: hard
 
