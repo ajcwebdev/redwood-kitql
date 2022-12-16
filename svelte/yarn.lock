@@ -1306,7 +1306,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-yoga/common@npm:^2.8.2":
+"@graphql-yoga/common@npm:2.8.2":
   version: 2.8.2
   resolution: "@graphql-yoga/common@npm:2.8.2"
   dependencies:
@@ -1395,7 +1395,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kitql/all-in@npm:0.6.7, @kitql/all-in@npm:^0.6.7":
+"@kitql/all-in@npm:0.6.7":
   version: 0.6.7
   resolution: "@kitql/all-in@npm:0.6.7"
   dependencies:
@@ -5835,9 +5835,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^2.59.0":
-  version: 2.70.1
-  resolution: "rollup@npm:2.70.1"
+"rollup@npm:>=2.59.0 <2.78.0":
+  version: 2.77.3
+  resolution: "rollup@npm:2.77.3"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -5845,7 +5845,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 982e7d1ecb7f415b80628e4a6290d06c85132800f684855b271995198e897f076512ad8b1bc26a63b2a8903e7f496e31a4a3f882cae20f5981bbc768366e472b
+  checksum: 7e04ba4e8fdbc3a4a368013e4b788044c16fe94e7301aacbf38e37210983e159b97887ddd3333be9f78fedb30264f094c111ff56a0207c21d4e1745248a7aa42
   languageName: node
   linkType: hard
 
@@ -6277,7 +6277,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte-preprocess@npm:^4.10.7":
+"svelte-preprocess@npm:4.10.7":
   version: 4.10.7
   resolution: "svelte-preprocess@npm:4.10.7"
   dependencies:
@@ -6326,7 +6326,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte@npm:^3.48.0":
+"svelte@npm:3.48.0":
   version: 3.48.0
   resolution: "svelte@npm:3.48.0"
   checksum: edcc26c1c2ea64963a2b1ab61ef1dbc0b84e76a68986c7737e9f4c4b3c7d40ec94f0a750ae0fbe27f5981d8cf2282e31d4e57cb050355b9d3c57896707ef55a0
@@ -6338,8 +6338,8 @@ __metadata:
   resolution: "svelte@workspace:."
   dependencies:
     "@graphql-codegen/cli": ^2.6.2
-    "@graphql-yoga/common": ^2.8.2
-    "@kitql/all-in": ^0.6.7
+    "@graphql-yoga/common": 2.8.2
+    "@kitql/all-in": 0.6.7
     "@kitql/client": ^0.5.7
     "@kitql/vite-plugin-watch-and-run": ^0.3.4
     "@sveltejs/adapter-auto": next
@@ -6347,10 +6347,10 @@ __metadata:
     "@sveltejs/kit": next
     dotenv: ^16.0.1
     graphql: ^16.5.0
-    svelte: ^3.48.0
-    svelte-preprocess: ^4.10.7
-    tslib: ^2.4.0
-    typescript: ^4.7.3
+    svelte: 3.48.0
+    svelte-preprocess: 4.10.7
+    tslib: 2.4.0
+    typescript: 4.7.3
   languageName: unknown
   linkType: soft
 
@@ -6509,17 +6509,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:2.4.0, tslib@npm:^2, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:~2.4.0":
+  version: 2.4.0
+  resolution: "tslib@npm:2.4.0"
+  checksum: eb19bda3ae545b03caea6a244b34593468e23d53b26bf8649fbc20fce43e9b21a71127fd6d2b9662c0fe48ee6ff668ead48fd00d3b88b2b716b1c12edae25b5d
+  languageName: node
+  linkType: hard
+
 "tslib@npm:^1.9.0":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: 69ae09c49eea644bc5ebe1bca4fa4cc2c82b7b3e02f43b84bd891504edf66dbc6b2ec0eef31a957042de2269139e4acff911e6d186a258fb14069cd7f6febce2
-  languageName: node
-  linkType: hard
-
-"tslib@npm:^2, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:~2.4.0":
-  version: 2.4.0
-  resolution: "tslib@npm:2.4.0"
-  checksum: eb19bda3ae545b03caea6a244b34593468e23d53b26bf8649fbc20fce43e9b21a71127fd6d2b9662c0fe48ee6ff668ead48fd00d3b88b2b716b1c12edae25b5d
   languageName: node
   linkType: hard
 
@@ -6537,7 +6537,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.7.3":
+"typescript@npm:4.7.3":
   version: 4.7.3
   resolution: "typescript@npm:4.7.3"
   bin:
@@ -6547,7 +6547,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.7.3#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.7.3#~builtin<compat/typescript>":
   version: 4.7.3
   resolution: "typescript@patch:typescript@npm%3A4.7.3#~builtin<compat/typescript>::version=4.7.3&hash=7ad353"
   bin:
@@ -6654,14 +6654,14 @@ __metadata:
   linkType: hard
 
 "vite@npm:^2.9.10":
-  version: 2.9.11
-  resolution: "vite@npm:2.9.11"
+  version: 2.9.15
+  resolution: "vite@npm:2.9.15"
   dependencies:
     esbuild: ^0.14.27
     fsevents: ~2.3.2
     postcss: ^8.4.13
     resolve: ^1.22.0
-    rollup: ^2.59.0
+    rollup: ">=2.59.0 <2.78.0"
   peerDependencies:
     less: "*"
     sass: "*"
@@ -6678,7 +6678,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: fcadc69b9f92b633d495fa5fb13ae2d78eac3aa79fafcb379aa9b23b0930557a0f60ece8b4e955a62377ff026ab131b3d325c6f0861d46e9207c781f2456531f
+  checksum: 3bc83ea78396215a4d1dbf8b7c8c81869e9c3a877593a87978b964baa6ea675b6063b275e01f6c818d18bee78b32a9f94adc6f76b8023eecb12f9cd8f6dde727
   languageName: node
   linkType: hard
 
